@@ -1,0 +1,24 @@
+{
+  "name": "relationship-agent",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "npm run dev --workspace @relationship-agent/server",
+    "dev:web": "npm run dev --workspace @relationship-agent/web",
+    "db:migrate": "npm run db:migrate --workspace @relationship-agent/server",
+    "db:seed": "npm run db:seed --workspace @relationship-agent/server",
+    "test": "npm run test --workspace @relationship-agent/server",
+    "test:db": "npm run test:db --workspace @relationship-agent/server",
+    "eval": "tsx evals/run.ts",
+    "typecheck": "npm run typecheck --workspace @relationship-agent/server && npm run typecheck --workspace @relationship-agent/web",
+    "build": "npm run build --workspace @relationship-agent/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

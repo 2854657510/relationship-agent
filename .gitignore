@@ -1,0 +1,26 @@
+# 依赖
+node_modules/
+
+# 环境变量与密钥（.env.example 要入库）
+.env
+.env.*
+!.env.example
+
+# 运行时数据：截图原图、上传文件
+data/
+
+# 评测产物：报告、trace、模型输出
+evals/runs/
+
+# 构建产物
+dist/
+coverage/
+
+# 日志与系统文件
+*.log
+.DS_Store
+Thumbs.db
+
+# 本地临时文件
+*.local
+.tmp/

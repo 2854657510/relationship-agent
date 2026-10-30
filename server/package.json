@@ -1,0 +1,33 @@
+{
+  "name": "@relationship-agent/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:migrate:reset": "tsx src/db/migrate.ts --reset",
+    "db:seed": "tsx src/db/seed.ts",
+    "test": "vitest run --exclude test/db.test.ts",
+    "test:db": "vitest run test/db.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@earendil-works/pi-agent-core": "1.4.0",
+    "@earendil-works/pi-ai": "1.4.0",
+    "@fastify/cors": "^10.0.2",
+    "@fastify/static": "^8.0.4",
+    "@sinclair/typebox": "^0.34.13",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "pg": "^8.13.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
